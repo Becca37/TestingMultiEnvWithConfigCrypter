@@ -36,4 +36,4 @@ config-crypter encrypt -p forConfig.pfx -f appsettings.Development.json -k "Encr
 config-crypter decrypt -p forConfig.pfx -f appsettings.Development.json -k "EncryptedKeys.TestPhrase2" -r
 
 ## My Test Results
-![Test Results](/assets/images/example.png)
+![Test Results](/VS_C%23_CORE5/wwwroot/assets/images/example.png?raw=true)
