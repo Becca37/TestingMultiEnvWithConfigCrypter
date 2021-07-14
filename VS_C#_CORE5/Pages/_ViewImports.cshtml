@@ -1,0 +1,11 @@
+@using Microsoft.AspNetCore.Identity
+@using TestingMultiEnvWithConfigCrypter
+@using TestingMultiEnvWithConfigCrypter.Data
+@namespace TestingMultiEnvWithConfigCrypter.Pages
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@using Microsoft.Extensions.Configuration
+@inject IConfiguration Configuration
+
+@using Microsoft.AspNetCore.Hosting
+@inject IWebHostEnvironment webHostEnv

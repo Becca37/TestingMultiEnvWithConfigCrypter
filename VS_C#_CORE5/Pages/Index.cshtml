@@ -1,0 +1,54 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+
+    var greetingResultText = Configuration["MySettings:Greeting"].ToLower().Contains(webHostEnv.EnvironmentName.ToLower()) ? "OK" : "ERROR";
+    var greetingResult = greetingResultText == "OK" ? "alert-success" : "alert-danger";
+
+    var testPhraseResultText = Configuration["EncryptedKeys:TestPhrase"].ToLower().Contains(webHostEnv.EnvironmentName.ToLower()) ? "OK" : "ERROR";
+    var testPhraseResult = testPhraseResultText == "OK" ? "alert-success" : "alert-danger";
+
+    var yuppersResultText = Configuration["EncryptedKeys:Yuppers"].ToLower().Contains(webHostEnv.EnvironmentName.ToLower()) ? "OK" : "ERROR";
+    var yuppersResult = yuppersResultText == "OK" ? "alert-success" : "alert-danger";
+
+    var encryptionStateText = "ON";
+    var encryptionStateResult = encryptionStateText == "ON" ? "alert-success" : "alert-primary";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Testing</h1><h4>Use of Multi-Environment Appsettings.JSON Files w/ DevAttic ConfigCrypter</h4>
+    <div>
+        <table>
+            <tr>
+                <th>What</th>
+                <th>Value</th>
+                <th>Check</th>
+            </tr>
+            <tr>
+                <td colspan="2" class="alert alert-secondary">ConfigCrypter State</td>
+                <td class="@encryptionStateResult">@encryptionStateText</td>
+            </tr>
+            <tr>
+                <td>Web Host Environment</td>
+                <td>@webHostEnv.EnvironmentName</td>
+                <td>---</td>
+            </tr>
+            <tr>
+                <td>Greeting</td>
+                <td>@Configuration["MySettings:Greeting"]</td>
+                <td class="alert @greetingResult">@greetingResultText</td>
+            </tr>
+            <tr>
+                <td>An unencrypted test phrase from appsettings.{Env}.json</td>
+                <td>@Configuration["EncryptedKeys:TestPhrase"]</td>
+                <td class="alert @testPhraseResult">@testPhraseResultText</td>
+            </tr>
+            <tr>
+                <td>An encrypted (should be decrypted now of course!) test phrase from appsettings.{Env}.json</td>
+                <td>@Configuration["EncryptedKeys:Yuppers"]</td>
+                <td class="alert @yuppersResult">@yuppersResultText</td>
+            </tr>
+        </table>
+    </div>
+</div>
