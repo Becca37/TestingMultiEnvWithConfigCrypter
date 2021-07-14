@@ -23,15 +23,15 @@ This was encountered first in a production application where I had NOT been usin
    * de/encrypt keys accordingly, and 
    * change the Index.cshtml encryptionStateText variable to ON or OFF as appropriate (this last is just a visual indicator, does not impact functionality in the least).
 
-## Commands
+### Commands
 
  Provided you're working in the same folder as both the .pfx and appsettings.{env}.json files ... 
  
-### Encrypt
+#### Encrypt
 
 config-crypter encrypt -p forConfig.pfx -f appsettings.Development.json -k "EncryptedKeys.TestPhrase2" -r
 
-### Decrupt
+#### Decrypt
 
 config-crypter decrypt -p forConfig.pfx -f appsettings.Development.json -k "EncryptedKeys.TestPhrase2" -r
 
