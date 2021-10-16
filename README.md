@@ -37,3 +37,6 @@ config-crypter decrypt -p forConfig.pfx -f appsettings.Development.json -k "Encr
 
 ## My Test Results
 ![Test Results](/VS_C%23_CORE5/wwwroot/assets/images/example.png?raw=true)
+
+~~~~~
+Also, might or might not be related, but I have found that if I'm doing entity framework-based database updates, I have to decrypt the connection string (and comment out that associated line in program.cs) in order for the database update to process through. Otherwise it errors about "Format of the initialization string does not conform to specification".  The update the can be successfully processed, then I uncomment and re-encrypt aftterward.
