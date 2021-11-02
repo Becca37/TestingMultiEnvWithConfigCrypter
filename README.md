@@ -1,5 +1,7 @@
 # Testing Multi Env With DevAttic's ConfigCrypter
 
+*****  THIS ISSUE HAS BEEN CORRECTED. Thanks DevAttic! *****
+
 I have encountered a seeming issue where using [DevAttic's ConfigCrypter](https://github.com/devattic/ConfigCrypter) nullifies the loading of {env}-based appsettings files. I've opened [an issue on DevAttic's GitHub](https://github.com/devattic/ConfigCrypter/issues/2), so feel free to check there in case someone points out my error and I haven't updated here yet. :0)
 
 ## History
